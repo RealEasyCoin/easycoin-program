@@ -25,3 +25,24 @@ anchor build --verifiable
 ```
 
 If you do not have the Solana Anchor framework CLI installed, you can do so by following [this guide](https://www.anchor-lang.com/docs/installation).
+
+## Verifying the code
+You can verify that the on-chain program binary is indeed compiled from the source code in this repository by following these steps:
+
+First, clone this repository and build the program locally using the steps above.
+``` Bash
+git clone https://github.com/RealEasyCoin/easycoin-program.git
+git checkout 46d438ab52da794779f23f69dec4f5a8c97b4dcf
+```
+``` Bash
+# SOLANA_RPC_URL is the URL of the Solana rpc node, e.g. https://api.mainnet-beta.solana.com
+anchor verify -p easycoin easyTwKoYFtBTzmNqGYjKS5nZ9SvdTkhPxSHbBMnraY --provider.cluster SOLANA_RPC_URL 
+```
+
+If the verification is successful, it confirms that the on-chain program matches the source code in this repository.
+
+## Security
+EasyCoin has undergone a comprehensive security audit by BlockSec, a leading blockchain security firm. 
+You can view the full audit report at the following link: 
+
+[BlockSec Audit Report for EasyCoin](https://github.com/blocksecteam/audit-reports/blob/main/rust/blocksec_easycoin_v1.0-signed.pdf)
